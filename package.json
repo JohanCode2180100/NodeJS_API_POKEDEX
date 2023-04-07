@@ -1,0 +1,21 @@
+{
+  "name": "api_rest_mysql_pokemon",
+  "version": "1.0.0",
+  "description": "an awesone API REST to handle some pokemons.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Johan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
