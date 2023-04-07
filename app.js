@@ -5,9 +5,28 @@ const { success, getUniqueId } = require("./helper.js");
 const favicon = require("serve-favicon");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const { Sequelize } = require("sequelize");
 
 const express = require("express");
 const app = express();
+
+const sequelize = new Sequelize("pokedex", "root", "", {
+  host: "localhost",
+  //driver mariadb
+  dialect: "mariadb",
+  dialectOptions: {
+    timezone: "Etc/GMT-2",
+  },
+  logging: false,
+});
+
+//connexion
+sequelize
+  .authenticate()
+  .then((_) => console.log("la connexion a la BDD a ete etabli ..."))
+  .catch((error) =>
+    console.error(`impossible de se connecter a la BDD... Erreur ${error}`)
+  );
 
 //middlewares
 app
